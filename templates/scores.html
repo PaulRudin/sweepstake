@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Euro 2012 Prediction Sweepstake</title>
+  </head>
+  <style type="text/css">
+  </style>
+<body>
+<h1>Euro 2012 Prediction Sweepstake</h1>
+
+
+{% if scores %}
+  <table class="scores" border="1">
+    <tr> 
+      <th>Name</th> 
+      <th>Points</th>
+      <th>Exact</th>
+      <th>Correct</th>
+    </tr>
+    {% for name, score in scores %}
+    {% set s, e, c = score %}
+    <tr> <td>{{name}}</td> <td>{{s}}</td><td>{{e}}</td><td>{{c}}</td></tr>
+    {% endfor %}
+  </table>
+{% endif %}
+
+<p> The table gets the current results from the BBC web site. It won't
+refetch more often than every 5 minutes to avoid too many
+requests. Please let me know if you think anything is not being
+calculated correctly. At the moment I've not included anything for the
+winner and runner-up prediction.</p>
+
+
+
+<address>
+  <a href="mailto:paul@rudin.co.uk">Paul Rudin</a>
+</address>
+</body>
+</html>
+
+
